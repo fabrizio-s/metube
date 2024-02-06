@@ -71,7 +71,6 @@ def get_opts(format: str, quality: str, ytdl_opts: dict) -> dict:
         if format not in ("wav") and "writethumbnail" not in opts:
             opts["writethumbnail"] = True
             postprocessors.append({"key": "FFmpegThumbnailsConvertor", "format": "jpg", "when": "before_dl"})
-            postprocessors.append({"key": "FFmpegMetadata"})
             postprocessors.append({"key": "EmbedThumbnail"})
     
     if format == "thumbnail":
